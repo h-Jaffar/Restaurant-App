@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../Css/Signin.css"
 
 function SigninPage() {
   return (
     <>
+    <div className="scrolling-off">
       <div className="row justify-content-center">
         <div className="col-md-4 text-center mt-2">
           <img
@@ -11,7 +13,7 @@ function SigninPage() {
             src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
           />
           <h3 className="boldtext my-3">WELCOME BACK</h3>
-          <div className="my-5 ms-5 me-2 text-start">
+          <div className="my-5 ms-5 me-2 text-start centeredItems">
             <label for="emailad">Email Address</label>
             <input
               id="emailad"
@@ -46,6 +48,7 @@ function SigninPage() {
             src="https://as2.ftcdn.net/v2/jpg/01/90/52/65/1000_F_190526564_IVy5J7E9JXdyKqeSrZx8hr6YTLhyIYpQ.jpg"
           />
         </div>
+      </div>
       </div>
     </>
   );

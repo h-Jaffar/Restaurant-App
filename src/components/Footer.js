@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../Css/Footer.css"
 function Footer() {
     return(
         <>
@@ -37,11 +37,11 @@ function Footer() {
           <h4 className="boldtext">Get in Touch</h4>
           <p>Stay updated about our news,promotions and new offers</p>
           <input
-            className="form-control"
+            className="form-control input-responsive"
             type="email"
             placeholder="Enter email address"
           />
-          <button className="btn btn-primary">Subscribe</button>
+          <button className="btn btn-primary btn-responsive">Subscribe</button>
           <br />
           <br />
         </div>

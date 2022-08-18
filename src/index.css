@@ -309,3 +309,8 @@ a{
   font-size: 16px;
   text-align: center;
 }
+@media (maz-width: 468px){
+  body{
+    overflow-x: hidden;
+  }
+}

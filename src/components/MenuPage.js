@@ -2,6 +2,8 @@ import React from "react";
 import Footer from "./Footer";
 import ref from "react-ref";
 import ArrowKeysReact from "arrow-keys-react";
+import { Link } from "react-router-dom";
+import "../Css/MenuPage.css"
 
 function MenuPage() {
   var drink = [
@@ -2007,7 +2009,8 @@ function MenuPage() {
 
   return (
     <>
-      <nav class="fixed-top navbar-light bg-light justify-content-center">
+    <div className="scrollingoff">
+      <nav className="fixed-top navbar-light bg-light justify-content-center">
         <div className="row menu">
           <div className="col-md-4 menuitems text-start">
             <a href="/">
@@ -2028,7 +2031,7 @@ function MenuPage() {
           <div className="col-md-4 menuitems text-end">
             <button className="btn btn-light">
               <i className="fa-solid fa-user btnicon"></i>
-              <a href="/login">Sign in</a>
+              <Link to="/login">Sign in</Link>
             </button>
           </div>
         </div>
@@ -2045,11 +2048,11 @@ function MenuPage() {
 
       <div
         id="carouselExampleControls"
-        class="carousel  sticky-top slide"
+        className="carousel  sticky-top slide"
         data-interval="false"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <ul className="nav nav-pills nav-fill sticky-top flex-column">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#drinks">
@@ -2103,7 +2106,7 @@ function MenuPage() {
               </li>
             </ul>
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <ul className="nav nav-pills nav-fill sticky-top flex-column">
               <li className="nav-item">
                 <a className="nav-link" href="#kidsmeal">
@@ -2169,22 +2172,22 @@ function MenuPage() {
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleControls"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
 
@@ -2300,162 +2303,162 @@ function MenuPage() {
           </a>
         </li>
       </ul> */}
-
       <div className="row productrow" id="drinks">
         <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Drinks</h3>
-          <div className="row">{drinks}</div>
+          <h3 className="boldtext ms-2 mt-5 nomargin">Drinks</h3>
+          <div className="row centeritems">{drinks}</div>
         </div>
       </div>
 
       <div className="row productrow" id="juice">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Juices</h3>
-          <div className="row">{juices}</div>
+          <div className="row centeritems">{juices}</div>
         </div>
       </div>
 
       <div className="row productrow" id="milkshake">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Milk Shakes</h3>
-          <div className="row">{milkshakes}</div>
+          <div className="row centeritems">{milkshakes}</div>
         </div>
       </div>
 
       <div className="row productrow" id="burgermeal">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Burger Meal</h3>
-          <div className="row">{burgermeals}</div>
+          <div className="row centeritems">{burgermeals}</div>
         </div>
       </div>
 
       <div className="row productrow" id="chickenfillet">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger Meal</h3>
-          <div className="row">{chickenfillets}</div>
+          <div className="row centeritems">{chickenfillets}</div>
         </div>
       </div>
 
       <div className="row productrow" id="pizza">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Pizza</h3>
-          <div className="row">{pizzas}</div>
+          <div className="row centeritems">{pizzas}</div>
         </div>
       </div>
 
       <div className="row productrow" id="mealdeal">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Meal Deals</h3>
-          <div className="row">{mealdeals}</div>
+          <div className="row centeritems">{mealdeals}</div>
         </div>
       </div>
 
       <div className="row productrow" id="parmesan">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Parmesan</h3>
-          <div className="row">{parmesans}</div>
+          <div className="row centeritems">{parmesans}</div>
         </div>
       </div>
 
       <div className="row productrow" id="platter">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Platter</h3>
-          <div className="row">{platters}</div>
+          <div className="row centeritems">{platters}</div>
         </div>
       </div>
 
       <div className="row productrow" id="dessert">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Dessert</h3>
-          <div className="row">{desserts}</div>
+          <div className="row centeritems">{desserts}</div>
         </div>
       </div>
 
       <div className="row productrow" id="kidsmeal">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Kids Meal</h3>
-          <div className="row">{kidsmeals}</div>
+          <div className="row centeritems">{kidsmeals}</div>
         </div>
       </div>
 
       <div className="row productrow" id="dips">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Dips</h3>
-          <div className="row">{dips}</div>
+          <div className="row centeritems">{dips}</div>
         </div>
       </div>
 
       <div className="row productrow" id="kebab">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Kebabs</h3>
-          <div className="row">{kebabs}</div>
+          <div className="row centeritems">{kebabs}</div>
         </div>
       </div>
 
       <div className="row productrow" id="wrap">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Wraps</h3>
-          <div className="row">{wraps}</div>
+          <div className="row centeritems">{wraps}</div>
         </div>
       </div>
 
       <div className="row productrow" id="spicywing">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Spicy Wings</h3>
-          <div className="row">{spicywings}</div>
+          <div className="row centeritems">{spicywings}</div>
         </div>
       </div>
 
       <div className="row productrow" id="icecream">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Ice Creams</h3>
-          <div className="row">{icecreams}</div>
+          <div className="row centeritems">{icecreams}</div>
         </div>
       </div>
 
       <div className="row productrow" id="speciality">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Happy's Specialities</h3>
-          <div className="row">{specialities}</div>
+          <div className="row centeritems">{specialities}</div>
         </div>
       </div>
 
       <div className="row productrow" id="sideorder">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Side Orders</h3>
-          <div className="row">{sideorders}</div>
+          <div className="row centeritems">{sideorders}</div>
         </div>
       </div>
 
       <div className="row productrow" id="garlicbread">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Garlic Bread</h3>
-          <div className="row">{garlicbreads}</div>
+          <div className="row centeritems">{garlicbreads}</div>
         </div>
       </div>
 
       <div className="row productrow" id="calzone">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Calzone</h3>
-          <div className="row">{calzones}</div>
+          <div className="row centeritems">{calzones}</div>
         </div>
       </div>
 
       <div className="row productrow" id="burger">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Burger</h3>
-          <div className="row">{burgers}</div>
+          <div className="row centeritems">{burgers}</div>
         </div>
       </div>
 
       <div className="row productrow" id="chickenfilletburger">
         <div className="col-md-12">
           <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger</h3>
-          <div className="row">{chickenfilletburgers}</div>
+          <div className="row centeritems">{chickenfilletburgers}</div>
         </div>
       </div>
 
       <Footer />
+      </div>
     </>
   );
 }

@@ -1,10 +1,12 @@
 import React from "react";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import "../Css/HomePage.css"
 
 function Homepage() {
   return (
     <>
+    <div className="hidescroll">
       <div className="container-fluid">
         <div className="row menu justify-content-center">
           <div className="col-md-4 menuitems text-start">
@@ -32,7 +34,7 @@ function Homepage() {
         </div>
 
         <div
-          className="carousel carousel-dark carousel-fade slide"
+          className="carousel carousel-dark carousel-fade slide carouseladjust"
           data-bs-ride="carousel"
           id="carousel"
         >
@@ -80,56 +82,56 @@ function Homepage() {
             >
               <img
                 src="https://www.happyspizzaburger.co.uk/uploads/restorants/751msq61654252482.jpg"
-                className="d-block w-100"
+                className="d-block w-100 img-responsive"
               />
               <div className="bottom-left">
-                <h1 className="boldtext bigtext">We keep it</h1>
-                <h1 className="boldtext bigtext">Simple, Fresh and Real</h1>
-                <h4>Now Order All Favourite Food Online</h4>
+                <h1 className="boldtext bigtext text-responsive">We keep it</h1>
+                <h1 className="boldtext bigtext text-responsive">Simple, Fresh and Real</h1>
+                <h4 className="text-responsive">Now Order All Favourite Food Online</h4>
               </div>
             </div>
             <div className="carousel-item carouselcont">
               <img
                 src="https://www.happyspizzaburger.co.uk/uploads/restorants/594gYqJ1654252482.jpg"
-                className="d-block w-100"
+                className="d-block w-100 img-responsive"
               />
               <div className="bottom-left">
-                <h1 className="boldtext bigtext">We keep it</h1>
-                <h1 className="boldtext bigtext">Simple, Fresh and Real</h1>
-                <h4>Now Order All Favourite Food Online</h4>
+                <h1 className="boldtext bigtext text-responsive">We keep it</h1>
+                <h1 className="boldtext bigtext text-responsive">Simple, Fresh and Real</h1>
+                <h4 className="text-responsive">Now Order All Favourite Food Online</h4>
               </div>
             </div>
             <div className="carousel-item carouselcont">
               <img
                 src="https://www.happyspizzaburger.co.uk/uploads/restorants/783y5fE1654253475.jpg"
-                className="d-block w-100"
+                className="d-block w-100 img-responsive"
               />
               <div className="bottom-left">
-                <h1 className="boldtext bigtext">We keep it</h1>
-                <h1 className="boldtext bigtext">Simple, Fresh and Real</h1>
-                <h4>Now Order All Favourite Food Online</h4>
+                <h1 className="boldtext bigtext text-responsive">We keep it</h1>
+                <h1 className="boldtext bigtext text-responsive">Simple, Fresh and Real</h1>
+                <h4 className="text-responsive">Now Order All Favourite Food Online</h4>
               </div>
             </div>
             <div className="carousel-item carouselcont">
               <img
                 src="https://www.happyspizzaburger.co.uk/uploads/restorants/651OLZN1654253108.jpg"
-                className="d-block w-100"
+                className="d-block w-100 img-responsive"
               />
               <div className="bottom-left">
-                <h1 className="boldtext bigtext">We keep it</h1>
-                <h1 className="boldtext bigtext">Simple, Fresh and Real</h1>
-                <h4>Now Order All Favourite Food Online</h4>
+                <h1 className="boldtext bigtext text-responsive">We keep it</h1>
+                <h1 className="boldtext bigtext text-responsive">Simple, Fresh and Real</h1>
+                <h4 className="text-responsive">Now Order All Favourite Food Online</h4>
               </div>
             </div>
             <div className="carousel-item carouselcont">
               <img
                 src="https://www.happyspizzaburger.co.uk/uploads/restorants/5788hSk1654252482.jpg"
-                className="d-block w-100"
+                className="d-block w-100 img-responsive"
               />
               <div className="bottom-left">
-                <h1 className="boldtext bigtext">We keep it</h1>
-                <h1 className="boldtext bigtext">Simple, Fresh and Real</h1>
-                <h4>Now Order All Favourite Food Online</h4>
+                <h1 className="boldtext bigtext text-responsive">We keep it</h1>
+                <h1 className="boldtext bigtext text-responsive">Simple, Fresh and Real</h1>
+                <h4 className="text-responsive">Now Order All Favourite Food Online</h4>
               </div>
             </div>
           </div>
@@ -141,7 +143,7 @@ function Homepage() {
           <div className="bs">
             <div className="row">
               <div className="col-md-12">
-                <button className="btn btn-primary homebtn"><a href="/menu">Order Now</a></button>
+                <button className="btn btn-primary homebtn"><Link to="/menu">Order Now</Link></button>
               </div>
             </div>
 
@@ -193,19 +195,19 @@ function Homepage() {
           src="https://www.happyspizzaburger.co.uk/uploads/restorants/751msq61654252482.jpg"
         />
         <div className="centered">
-          <h1 className="boldtext goldclr">FRESH & QUALITY FOOD</h1>
-          <h4 className="boldtext">
+          <h1 className="boldtext goldclr textresponsive">FRESH & QUALITY FOOD</h1>
+          <h4 className="boldtext desctextresponsive">
             Quality in Food ensures that we get the freshest of ingredients and
             produce every single day for all of our taste dishes.
           </h4>
-          <button className="btn btn-primary homebtn"><a href="/menu">Order Now</a></button>
+          <button className="btn btn-primary homebtn"><Link to="/menu">Order Now</Link></button>
         </div>
       </div>
 
       <div className="row my-5">
         <div className="col-md-12 text-center">
           <h1 className="boldtext">Why Us?</h1>
-          <h5>
+          <h5 className="text-responsive">
             We are pleased to offer good quality and quantity at affordable
             prices. Only the freshest and best quality ingredients are used in
             the preparation of our food items.
@@ -235,6 +237,7 @@ function Homepage() {
         </div>
       </div>
       <Footer/>
+      </div>
     </>
   );
 }
