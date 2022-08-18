@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -7,10 +8,10 @@ function Homepage() {
       <div className="container-fluid">
         <div className="row menu justify-content-center">
           <div className="col-md-4 menuitems text-start">
-            <a href="/">
+            <Link to="/">
               <i className="fa-solid fa-cart-shopping btnicon"></i>
               Cart
-            </a>
+            </Link>
           </div>
 
           <div className="col-md-4 menuitems text-center">
@@ -23,9 +24,9 @@ function Homepage() {
           </div>
 
           <div className="col-md-4 menuitems text-end">
-            <button className="btn btn-primary disablebtn"><a href="/menu">Order Now</a></button>
+            <button className="btn btn-primary disablebtn"><Link to="/menu">Order Now</Link></button>
             <button className="btn btn-light">
-              <i className="fa-solid fa-user btnicon"></i><a href="/login">Sign in</a>
+              <i className="fa-solid fa-user btnicon"></i><Link to="/login">Sign in</Link>
             </button>
           </div>
         </div>
