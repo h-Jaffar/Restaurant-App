@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SigninPage() {
   return (
@@ -37,7 +38,7 @@ function SigninPage() {
             <button className="btn btn-light signinbtn"><i class="fa-brands fa-square-facebook"></i>  FACEBOOK</button>
           </div>
 
-          <p className="my-5">Do you have an account yet? <a href="/register">Register</a></p>
+          <p className="my-5">Do you have an account yet? <Link to="/register">Register</Link></p>
         </div>
         <div className="col-md-8">
           <img
