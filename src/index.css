@@ -239,14 +239,14 @@ a{
 
 .menutitleimg{
   width: 100%;
-  height: 300px;
+  height: 400px;
   margin: none;
 }
 
 .productrow{
   display: flex !important;
   flex-direction: row;
-  padding-top: 120px;
+  /* padding-top: 120px; */
 }
 
 .productcard{
@@ -254,6 +254,7 @@ a{
   margin: 22px;
   padding: 20px 10px;
   width: 30%;
+  cursor: pointer;
 }
 
 .productimg{
@@ -261,12 +262,14 @@ a{
   height: 120px;
 }
 
+
 .nav-pills{
+  overflow-x: auto;
+  overflow-y: hidden;
   background-color: black;
   color: white;
   position: initial;
   height: 85px;
-  margin-top: 80px;
 }
 
 .nav-pills a{
@@ -279,11 +282,11 @@ a{
 }
 
 
-.customSticky{
+/* .customSticky{
   position: sticky;
-}
+} */
 
-.carousel-control-prev{
+/* .carousel-control-prev{
   background-color: black;
   color: white;
   justify-content: left;
@@ -296,7 +299,7 @@ a{
   justify-content: right;
   width: 29px;
   margin-top: 80px;
-}
+} */
 
 .nav-item {
   /* cursor: pointer; */

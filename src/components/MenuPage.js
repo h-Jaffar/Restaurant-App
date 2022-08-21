@@ -1,11 +1,81 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
-import ref from "react-ref";
-import ArrowKeysReact from "arrow-keys-react";
 import { Link } from "react-router-dom";
-import "../Css/MenuPage.css"
+import "../Css/MenuPage.css";
 
 function MenuPage() {
+  let [num, setNum] = useState(1);
+  let incNum = () => {
+    setNum(Number(num) + 1);
+  };
+  let decNum = () => {
+    if (num > 1) {
+      setNum(num - 1);
+    }
+  };
+  let handleChange = (e) => {
+    setNum(e.target.value);
+  };
+
+  function showmodal(item){
+    console.log(item.title);
+<div
+  class="modal fade"
+  id="addtocart"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {item.title}
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <label for="quantity">Quantity</label>
+        <div id="quantity">
+          <button
+            class="btn btn-light w-100"
+            type="button"
+            onClick={decNum}
+          >
+            -
+          </button>
+          <input
+            type="text"
+            class="form-control text-center"
+            value={num}
+            onChange={handleChange}
+          />
+          <button
+            class="btn btn-light w-100"
+            type="button"
+            onClick={incNum}
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+
+        <button type="button" class="btn btn-primary w-100">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  }
+
   var drink = [
     {
       title: "Coca Cola Cans",
@@ -108,17 +178,81 @@ function MenuPage() {
   ];
 
   var drinks = drink.map((item) => (
-    <div className="row productcard bs">
-      <div className="col-md-7">
-        <h5 className="boldtext">{item.title}</h5>
-        <p>{item.description}</p>
-        <h5>${item.price}</h5>
+    <>
+      <div
+        className="row productcard bs"
+        type="button"
+        onClick={()=>{showmodal(item)}}
+        // data-bs-toggle="modal"
+        // data-bs-target="#addtocart"
+      >
+        <div className="col-md-7">
+          <h5 className="boldtext">{item.title}</h5>
+          <p>{item.description}</p>
+          <h5>${item.price}</h5>
+        </div>
+        <div className="col-md-5">
+          <img className="productimg" src={item.image} />
+        </div>
       </div>
-      <div className="col-md-5">
-        <img className="productimg" src={item.image} />
-      </div>
-    </div>
+    </>
   ));
+
+//   <div
+//   class="modal fade"
+//   id="addtocart"
+//   tabindex="-1"
+//   aria-labelledby="exampleModalLabel"
+//   aria-hidden="true"
+// >
+//   <div class="modal-dialog">
+//     <div class="modal-content">
+//       <div class="modal-header">
+//         <h5 class="modal-title" id="exampleModalLabel">
+//           {item.title}
+//         </h5>
+//         <button
+//           type="button"
+//           class="btn-close"
+//           data-bs-dismiss="modal"
+//           aria-label="Close"
+//         ></button>
+//       </div>
+//       <div class="modal-body">
+//         <label for="quantity">Quantity</label>
+//         <div id="quantity">
+//           <button
+//             class="btn btn-light w-100"
+//             type="button"
+//             onClick={decNum}
+//           >
+//             -
+//           </button>
+//           <input
+//             type="text"
+//             class="form-control text-center"
+//             value={num}
+//             onChange={handleChange}
+//           />
+//           <button
+//             class="btn btn-light w-100"
+//             type="button"
+//             onClick={incNum}
+//           >
+//             +
+//           </button>
+//         </div>
+//       </div>
+//       <div class="modal-footer justify-content-center">
+//         {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+
+//         <button type="button" class="btn btn-primary w-100">
+//           Add to Cart
+//         </button>
+//       </div>
+//     </div>
+//   </div>
+// </div>
 
   var juice = [
     {
@@ -138,7 +272,13 @@ function MenuPage() {
   ];
 
   var juices = juice.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -224,7 +364,13 @@ function MenuPage() {
   ];
 
   var milkshakes = milkshake.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -343,7 +489,13 @@ function MenuPage() {
   ];
 
   var burgermeals = burgermeal.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -381,7 +533,13 @@ function MenuPage() {
   ];
 
   var chickenfillets = chickenfillet.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -748,7 +906,13 @@ function MenuPage() {
   ];
 
   var pizzas = pizza.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -785,7 +949,13 @@ function MenuPage() {
   ];
 
   var mealdeals = mealdeal.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -806,7 +976,13 @@ function MenuPage() {
   ];
 
   var parmesans = parmesan.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -826,7 +1002,13 @@ function MenuPage() {
   ];
 
   var platters = platter.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -873,7 +1055,13 @@ function MenuPage() {
   ];
 
   var desserts = dessert.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -914,7 +1102,13 @@ function MenuPage() {
   ];
 
   var kidsmeals = kidsmeal.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}(Kids Meal)</h5>
         <p>{item.description}</p>
@@ -967,7 +1161,13 @@ function MenuPage() {
   ];
 
   var dips = dip.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <h5>${item.price}</h5>
@@ -1035,7 +1235,13 @@ function MenuPage() {
   ];
 
   var kebabs = kebab.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1103,7 +1309,13 @@ function MenuPage() {
   ];
 
   var wraps = wrap.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1128,7 +1340,13 @@ function MenuPage() {
   ];
 
   var spicywings = spicywing.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <h5>${item.price}</h5>
@@ -1152,7 +1370,13 @@ function MenuPage() {
   ];
 
   var icecreams = icecream.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <h5>${item.price}</h5>
@@ -1203,7 +1427,13 @@ function MenuPage() {
   ];
 
   var specialities = speciality.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1316,7 +1546,13 @@ function MenuPage() {
   ];
 
   var sideorders = sideorder.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-12">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1518,7 +1754,13 @@ function MenuPage() {
   ];
 
   var garlicbreads = garlicbread.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1558,7 +1800,13 @@ function MenuPage() {
   ];
 
   var calzones = calzone.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1645,243 +1893,249 @@ function MenuPage() {
       image: "",
     },
     {
-      title: "Happy's Special Burger",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
     {
-      title: "",
-      description: "",
-      price: null,
+      title: "Ring Burger 2/4 Pounder",
+      description: "Cheese, Onion Rings",
+      price: 6.5,
       image: "",
     },
   ];
 
   var burgers = burger.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -1995,7 +2249,13 @@ function MenuPage() {
   ];
 
   var chickenfilletburgers = chickenfilletburger.map((item) => (
-    <div className="row productcard bs">
+    <div
+      className="row productcard bs"
+      type="button"
+      onClick={()=>{showmodal(item)}}
+      // data-bs-toggle="modal"
+      // data-bs-target="#addtocart"
+    >
       <div className="col-md-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
@@ -2009,44 +2269,224 @@ function MenuPage() {
 
   return (
     <>
-    <div className="scrollingoff">
-      <nav className="fixed-top navbar-light bg-light justify-content-center">
-        <div className="row menu">
-          <div className="col-md-4 menuitems text-start">
-            <a href="/">
-              <i className="fa-solid fa-cart-shopping btnicon"></i>
-              Cart
-            </a>
-          </div>
-
-          <div className="col-md-4 menuitems text-center">
-            <a href="/">
-              <img
-                className="menuimg"
-                src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
-              />
-            </a>
-          </div>
-
-          <div className="col-md-4 menuitems text-end">
-            <button className="btn btn-light">
-              <i className="fa-solid fa-user btnicon"></i>
-              <Link to="/login">Sign in</Link>
-            </button>
+      <div className="scrollingoff">
+      <div class="container-fluid">
+        <div class="row flex-nowrap">
+          <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              <a
+                href="/"
+                class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+              >
+                <span class="fs-5 d-none d-sm-inline">Title</span>
+              </a>
+              <ul
+                class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                id="menu"
+              >
+                <li class="nav-item">
+                  <a href="#" class="nav-link align-middle px-0">
+                    <i class="fs-4 bi-house"></i>{" "}
+                    <span class="ms-1 d-none d-sm-inline">Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#submenu1"
+                    data-bs-toggle="collapse"
+                    class="nav-link px-0 align-middle"
+                  >
+                    <i class="fs-4 bi-speedometer2"></i>{" "}
+                    <span class="ms-1 d-none d-sm-inline">Dashboard</span>{" "}
+                  </a>
+                  <ul
+                    class="collapse show nav flex-column ms-1"
+                    id="submenu1"
+                    data-bs-parent="#menu"
+                  >
+                    <li class="w-100">
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Item</span> 1{" "}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Item</span> 2{" "}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-table"></i>{" "}
+                    <span class="ms-1 d-none d-sm-inline">Orders</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#submenu2"
+                    data-bs-toggle="collapse"
+                    class="nav-link px-0 align-middle "
+                  >
+                    <i class="fs-4 bi-bootstrap"></i>{" "}
+                    <span class="ms-1 d-none d-sm-inline">Bootstrap</span>
+                  </a>
+                  <ul
+                    class="collapse nav flex-column ms-1"
+                    id="submenu2"
+                    data-bs-parent="#menu"
+                  >
+                    <li class="w-100">
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Item</span> 1
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Item</span> 2
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#submenu3"
+                    data-bs-toggle="collapse"
+                    class="nav-link px-0 align-middle"
+                  >
+                    <i class="fs-4 bi-grid"></i>{" "}
+                    <span class="ms-1 d-none d-sm-inline">Products</span>{" "}
+                  </a>
+                  <ul
+                    class="collapse nav flex-column ms-1"
+                    id="submenu3"
+                    data-bs-parent="#menu"
+                  >
+                    <li class="w-100">
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Product</span> 1
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Product</span> 2
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Product</span> 3
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="nav-link px-0">
+                        {" "}
+                        <span class="d-none d-sm-inline">Product</span> 4
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-people"></i>{" "}
+                    <span class="ms-1 d-none d-sm-inline">Customers</span>{" "}
+                  </a>
+                </li>
+              </ul>
+              <hr />
+              <div class="dropdown pb-4">
+                <a
+                  href="#"
+                  class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                  id="dropdownUser1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://github.com/mdo.png"
+                    alt="hugenerd"
+                    width="30"
+                    height="30"
+                    class="rounded-circle"
+                  />
+                  <span class="d-none d-sm-inline mx-1">loser</span>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark text-small shadow"
+                  aria-labelledby="dropdownUser1"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      New project...
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Settings
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Profile
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>      
+        <nav className="fixed-top navbar-light bg-light justify-content-center">
+          <div className="row menu">
+            <div className="col-md-4 menuitems text-start">
+              <a href="/">
+                <i className="fa-solid fa-cart-shopping btnicon"></i>
+                Cart
+              </a>
+            </div>
 
-      <div className="row justify-content-center">
-        <div className="col-md-12 text-center">
-          <img
-            className="menutitleimg"
-            src="https://www.happyspizzaburger.co.uk/uploads/restorants/751msq61654252482.jpg"
-          />
+            <div className="col-md-4 menuitems text-center">
+              <a href="/">
+                <img
+                  className="menuimg"
+                  src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
+                />
+              </a>
+            </div>
+
+            <div className="col-md-4 menuitems text-end">
+              <button className="btn btn-light">
+                <i className="fa-solid fa-user btnicon"></i>
+                <Link to="/login">Sign in</Link>
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        <div className="row justify-content-center">
+          <div className="col-md-12 text-center">
+            <img
+              className="menutitleimg"
+              src="https://www.happyspizzaburger.co.uk/uploads/restorants/751msq61654252482.jpg"
+            />
+          </div>
         </div>
-      </div>
 
-      <div
+        {/* <div
         id="carouselExampleControls"
         className="carousel  sticky-top slide"
         data-interval="false"
@@ -2189,275 +2629,276 @@ function MenuPage() {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> */}
 
-      {/* <ul className="nav nav-pills nav-fill sticky-top flex-column">
-        <li className="nav-item">
-          <a className="nav-link" aria-current="page" href="#drinks">
-            Drinks
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#juice">
-            Juice
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#milkshake">
-            Milkshake
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#burgermeal">
-            Burger Meal
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#chickenfillet">
-            Chicken Fillet Burger Meal
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#pizza">
-            Pizza
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#mealdeal">
-            Meal Deals
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#parmesan">
-            Parmesan
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#platter">
-            Platter
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#dessert">
-            Dessert
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#kidsmeal">
-            Kids Meal
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#dips">
-            Dips
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#kebab">
-            Kebabs
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#wrap">
-            Wraps
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#spicywing">
-            Spicy Wings
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#icecream">
-            Ice Cream
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#speciality">
-            Happy's Specialities
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#sideorder">
-            Side Orders
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#garlicbread">
-            Garlic Bread
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#calzone">
-            Calzone
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#burger">
-            Burgers
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#chickenfilletburger">
-            Chicken Fillet Burgers
-          </a>
-        </li>
-      </ul> */}
-      <div className="row productrow" id="drinks">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5 nomargin">Drinks</h3>
-          <div className="row centeritems">{drinks}</div>
+        <ul className="nav nav-pills nav-fill sticky-top flex-column">
+          <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href="#drinks">
+              Drinks
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#juice">
+              Juice
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#milkshake">
+              Milkshake
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#burgermeal">
+              Burger Meal
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#chickenfillet">
+              Chicken Fillet Burger Meal
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#pizza">
+              Pizza
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#mealdeal">
+              Meal Deals
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#parmesan">
+              Parmesan
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#platter">
+              Platter
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#dessert">
+              Dessert
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#kidsmeal">
+              Kids Meal
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#dips">
+              Dips
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#kebab">
+              Kebabs
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#wrap">
+              Wraps
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#spicywing">
+              Spicy Wings
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#icecream">
+              Ice Cream
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#speciality">
+              Happy's Specialities
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#sideorder">
+              Side Orders
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#garlicbread">
+              Garlic Bread
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#calzone">
+              Calzone
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#burger">
+              Burgers
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#chickenfilletburger">
+              Chicken Fillet Burgers
+            </a>
+          </li>
+        </ul>
+
+        <div className="row productrow" id="drinks">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5 nomargin">Drinks</h3>
+            <div className="row centeritems">{drinks}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="juice">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Juices</h3>
-          <div className="row centeritems">{juices}</div>
+        <div className="row productrow" id="juice">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Juices</h3>
+            <div className="row centeritems">{juices}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="milkshake">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Milk Shakes</h3>
-          <div className="row centeritems">{milkshakes}</div>
+        <div className="row productrow" id="milkshake">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Milk Shakes</h3>
+            <div className="row centeritems">{milkshakes}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="burgermeal">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Burger Meal</h3>
-          <div className="row centeritems">{burgermeals}</div>
+        <div className="row productrow" id="burgermeal">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Burger Meal</h3>
+            <div className="row centeritems">{burgermeals}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="chickenfillet">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger Meal</h3>
-          <div className="row centeritems">{chickenfillets}</div>
+        <div className="row productrow" id="chickenfillet">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger Meal</h3>
+            <div className="row centeritems">{chickenfillets}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="pizza">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Pizza</h3>
-          <div className="row centeritems">{pizzas}</div>
+        <div className="row productrow" id="pizza">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Pizza</h3>
+            <div className="row centeritems">{pizzas}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="mealdeal">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Meal Deals</h3>
-          <div className="row centeritems">{mealdeals}</div>
+        <div className="row productrow" id="mealdeal">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Meal Deals</h3>
+            <div className="row centeritems">{mealdeals}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="parmesan">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Parmesan</h3>
-          <div className="row centeritems">{parmesans}</div>
+        <div className="row productrow" id="parmesan">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Parmesan</h3>
+            <div className="row centeritems">{parmesans}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="platter">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Platter</h3>
-          <div className="row centeritems">{platters}</div>
+        <div className="row productrow" id="platter">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Platter</h3>
+            <div className="row centeritems">{platters}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="dessert">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Dessert</h3>
-          <div className="row centeritems">{desserts}</div>
+        <div className="row productrow" id="dessert">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Dessert</h3>
+            <div className="row centeritems">{desserts}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="kidsmeal">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Kids Meal</h3>
-          <div className="row centeritems">{kidsmeals}</div>
+        <div className="row productrow" id="kidsmeal">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Kids Meal</h3>
+            <div className="row centeritems">{kidsmeals}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="dips">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Dips</h3>
-          <div className="row centeritems">{dips}</div>
+        <div className="row productrow" id="dips">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Dips</h3>
+            <div className="row centeritems">{dips}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="kebab">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Kebabs</h3>
-          <div className="row centeritems">{kebabs}</div>
+        <div className="row productrow" id="kebab">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Kebabs</h3>
+            <div className="row centeritems">{kebabs}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="wrap">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Wraps</h3>
-          <div className="row centeritems">{wraps}</div>
+        <div className="row productrow" id="wrap">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Wraps</h3>
+            <div className="row centeritems">{wraps}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="spicywing">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Spicy Wings</h3>
-          <div className="row centeritems">{spicywings}</div>
+        <div className="row productrow" id="spicywing">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Spicy Wings</h3>
+            <div className="row centeritems">{spicywings}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="icecream">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Ice Creams</h3>
-          <div className="row centeritems">{icecreams}</div>
+        <div className="row productrow" id="icecream">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Ice Creams</h3>
+            <div className="row centeritems">{icecreams}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="speciality">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Happy's Specialities</h3>
-          <div className="row centeritems">{specialities}</div>
+        <div className="row productrow" id="speciality">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Happy's Specialities</h3>
+            <div className="row centeritems">{specialities}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="sideorder">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Side Orders</h3>
-          <div className="row centeritems">{sideorders}</div>
+        <div className="row productrow" id="sideorder">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Side Orders</h3>
+            <div className="row centeritems">{sideorders}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="garlicbread">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Garlic Bread</h3>
-          <div className="row centeritems">{garlicbreads}</div>
+        <div className="row productrow" id="garlicbread">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Garlic Bread</h3>
+            <div className="row centeritems">{garlicbreads}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="calzone">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Calzone</h3>
-          <div className="row centeritems">{calzones}</div>
+        <div className="row productrow" id="calzone">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Calzone</h3>
+            <div className="row centeritems">{calzones}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="burger">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Burger</h3>
-          <div className="row centeritems">{burgers}</div>
+        <div className="row productrow" id="burger">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Burger</h3>
+            <div className="row centeritems">{burgers}</div>
+          </div>
         </div>
-      </div>
 
-      <div className="row productrow" id="chickenfilletburger">
-        <div className="col-md-12">
-          <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger</h3>
-          <div className="row centeritems">{chickenfilletburgers}</div>
+        <div className="row productrow" id="chickenfilletburger">
+          <div className="col-md-12">
+            <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger</h3>
+            <div className="row centeritems">{chickenfilletburgers}</div>
+          </div>
         </div>
-      </div>
 
-      <Footer />
+        <Footer />
       </div>
     </>
   );
