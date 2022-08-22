@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "arrow-keys-react": "^1.0.6",
     "react": "^18.2.0",
+    "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
     "react-ref": "^0.0.1",
     "react-router-dom": "^6.3.0",

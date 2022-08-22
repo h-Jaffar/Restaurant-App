@@ -6,15 +6,48 @@ import "../Css/HomePage.css"
 function Homepage() {
   return (
     <>
-    <div className="hidescroll">
+    <div className="hidescroll" id="outer-container page-wrap">
       <div className="container-fluid">
         <div className="row menu justify-content-center">
           <div className="col-md-4 menuitems text-start">
-            <Link to="/">
-              <i className="fa-solid fa-cart-shopping btnicon"></i>
-              Cart
-            </Link>
+          <button
+                class="btn"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"
+              >
+                <i className="fa-solid fa-cart-shopping btnicon"></i>
+                Cart
+              </button>
           </div>
+
+          <div
+              class="offcanvas offcanvas-start"
+              tabindex="-1"
+              id="offcanvasExample"
+              aria-labelledby="offcanvasExampleLabel"
+            >
+              <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="offcanvasExampleLabel">
+                  Shopping Cart
+                </h2>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <div className="my-5">
+                  <h6>Your Cart is Empty!</h6>
+                </div>
+                <div class="cart-cont">
+                  <p>Order Minimum is $5.00. Please add more items in the cart.</p>
+                </div>
+              </div>
+            </div>
 
           <div className="col-md-4 menuitems text-center">
           <a href="/">
