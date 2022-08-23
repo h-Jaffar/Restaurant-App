@@ -46,6 +46,24 @@ function Homepage() {
                 <div class="cart-cont">
                   <p>Order Minimum is $5.00. Please add more items in the cart.</p>
                 </div>
+                <div className="cart-card">
+                    <h4>Item Name</h4>
+                    <h6>Q x $Price</h6>
+                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div className="cart-card">
+                    <h4>Item Name</h4>
+                    <h6>Q x $Price</h6>
+                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div className="row my-5">
+                  <h6>Sub-total: $100</h6>
+                  <button className="btn btn-primary btn-lg mt-2">CheckOut</button>
+                </div>
               </div>
             </div>
 
@@ -59,10 +77,9 @@ function Homepage() {
           </div>
 
           <div className="col-md-4 menuitems text-end">
-            <button className="btn btn-primary disablebtn"><Link to="/menu">Order Now</Link></button>
-            <button className="btn btn-light">
-              <i className="fa-solid fa-user btnicon"></i><Link to="/login">Sign in</Link>
-            </button>
+            <Link to="/menu"><button className="btn btn-primary disablebtn">Order Now</button></Link>
+            <Link to="/login"><button className="btn btn-light">
+              <i className="fa-solid fa-user btnicon"></i>Sign in</button></Link>
           </div>
         </div>
 
@@ -176,7 +193,7 @@ function Homepage() {
           <div className="bs">
             <div className="row">
               <div className="col-md-12">
-                <button className="btn btn-primary homebtn"><Link to="/menu">Order Now</Link></button>
+                <Link to="/menu"><button className="btn btn-primary homebtn">Order Now</button></Link>
               </div>
             </div>
 
@@ -230,10 +247,9 @@ function Homepage() {
         <div className="centered">
           <h1 className="boldtext goldclr textresponsive">FRESH & QUALITY FOOD</h1>
           <h4 className="boldtext desctextresponsive">
-            Quality in Food ensures that we get the freshest of ingredients and
-            produce every single day for all of our taste dishes.
+          Quality in Food ensures that we get the freshest of ingredients and produce every single day for all of our taste dishes. All orders are prepared fresh at the time the order is placed. The food is specially packed to keep its freshness and taste intact until arrival. Quality in Service entails our prompt order receipt, total understanding of our own menus to help you choose, exact knowledge of our offers and their availability and more so, flexibility in helping you complete the perfect meal.
           </h4>
-          <button className="btn btn-primary homebtn"><Link to="/menu">Order Now</Link></button>
+          <Link to="/menu"><button className="btn btn-primary homebtnsm">Order Now</button></Link>
         </div>
       </div>
 

@@ -2314,7 +2314,7 @@ function MenuPage() {
   return (
     <>
       <div className="scrollingoff" id="page-wrap outer-container">
-        <nav className="fixed-top navbar-light bg-light justify-content-center">
+        <nav className="sticky-top navbar-light bg-light justify-content-center">
           <div className="row menu">
             <div className="col-md-4 menuitems text-start">
               <button
@@ -2351,7 +2351,27 @@ function MenuPage() {
                   <h6>Your Cart is Empty!</h6>
                 </div>
                 <div class="cart-cont">
-                  <p>Order Minimum is $5.00. Please add more items in the cart.</p>
+                  <p>
+                    Order Minimum is $5.00. Please add more items in the cart.
+                  </p>
+                </div>
+                <div className="cart-card">
+                    <h4>Item Name</h4>
+                    <h6>Q x $Price</h6>
+                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div className="cart-card">
+                    <h4>Item Name</h4>
+                    <h6>Q x $Price</h6>
+                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
+                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div className="row my-5">
+                  <h6>Sub-total: $100</h6>
+                  <button className="btn btn-primary btn-lg mt-2">CheckOut</button>
                 </div>
               </div>
             </div>
@@ -2366,10 +2386,11 @@ function MenuPage() {
             </div>
 
             <div className="col-md-4 menuitems text-end">
-              <button className="btn btn-light">
-                <i className="fa-solid fa-user btnicon"></i>
-                <Link to="/login">Sign in</Link>
-              </button>
+              <Link to="/login">
+                <button className="btn btn-light">
+                  <i className="fa-solid fa-user btnicon"></i>Sign in
+                </button>
+              </Link>
             </div>
           </div>
         </nav>
