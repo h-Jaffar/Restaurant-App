@@ -165,6 +165,7 @@ code {
 
   .productrow{
     display: block !important;
+    margin-top: 20px;
   }
   .productcard{
     width: 80% !important;
@@ -326,3 +327,4 @@ a{
   font-size: large;
   font-weight: bold;
 }
+
