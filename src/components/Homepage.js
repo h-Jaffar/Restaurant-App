@@ -2,87 +2,14 @@ import React from "react";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import "../Css/HomePage.css"
+import Navbar from "./Navbar";
 
 function Homepage() {
   return (
     <>
-    <div className="hidescroll" id="outer-container page-wrap">
+    <div className="hidescroll">
+    <Navbar/>
       <div className="container-fluid">
-        <div className="row menu justify-content-center">
-          <div className="col-md-4 menuitems text-start">
-          <button
-                class="btn"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample"
-              >
-                <i className="fa-solid fa-cart-shopping btnicon"></i>
-                Cart
-              </button>
-          </div>
-
-          <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id="offcanvasExample"
-              aria-labelledby="offcanvasExampleLabel"
-            >
-              <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="offcanvasExampleLabel">
-                  Shopping Cart
-                </h2>
-                <button
-                  type="button"
-                  class="btn-close text-reset"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">
-                <div className="my-5">
-                  <h6>Your Cart is Empty!</h6>
-                </div>
-                <div class="cart-cont">
-                  <p>Order Minimum is $5.00. Please add more items in the cart.</p>
-                </div>
-                <div className="cart-card">
-                    <h4>Item Name</h4>
-                    <h6>Q x $Price</h6>
-                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
-                </div>
-                <div className="cart-card">
-                    <h4>Item Name</h4>
-                    <h6>Q x $Price</h6>
-                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
-                </div>
-                <div className="row my-5">
-                  <h6>Sub-total: $100</h6>
-                  <button className="btn btn-primary btn-lg mt-2">CheckOut</button>
-                </div>
-              </div>
-            </div>
-
-          <div className="col-md-4 menuitems text-center">
-          <a href="/">
-              <img
-                className="menuimg"
-                src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
-              />
-            </a>
-          </div>
-
-          <div className="col-md-4 menuitems text-end">
-            <Link to="/menu"><button className="btn btn-primary disablebtn">Order Now</button></Link>
-            <Link to="/login"><button className="btn btn-light">
-              <i className="fa-solid fa-user btnicon"></i>Sign in</button></Link>
-          </div>
-        </div>
-
         <div
           className="carousel carousel-dark carousel-fade slide carouseladjust"
           data-bs-ride="carousel"
@@ -256,10 +183,8 @@ function Homepage() {
       <div className="row my-5">
         <div className="col-md-12 text-center">
           <h1 className="boldtext">Why Us?</h1>
-          <h5 className="text-responsive">
-            We are pleased to offer good quality and quantity at affordable
-            prices. Only the freshest and best quality ingredients are used in
-            the preparation of our food items.
+          <h5 className="text-responsive whyus">
+          We are pleased to offer good quality and quantity at affordable prices. Only the freshest and best quality ingredients are used in the preparation of our food items. In addition, hygiene is an important factor of quality food delivery and is taken very seriously at Mighty Pizza. Periodic fumigation and strict vigil on kitchen staff on hygiene issues helps ensure that our valued customers not only receive tasty food, but that it is also hygienic and healthful.
           </h5>
         </div>
       </div>

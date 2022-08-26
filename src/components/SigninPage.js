@@ -7,11 +7,13 @@ function SigninPage() {
     <>
       <div className="scrolling-off">
         <div className="row justify-content-center">
-          <div className="col-md-4 text-center mt-2">
-            <img
-              className="menuimg"
-              src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
-            />
+          <div className="col-md-4 text-center mt-2 responsiveness">
+          <Link to="/">
+              <img
+                className="menuimg"
+                src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
+              />
+            </Link>
             <h3 className="boldtext my-3">WELCOME BACK</h3>
             <form action="/" method="get">
               <div className="my-5 ms-5 me-2 text-start centeredItems">
@@ -62,10 +64,10 @@ function SigninPage() {
               Do you have an account yet? <Link to="/register">Register</Link>
             </p>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-8 responsiveness">
             <img
               className="signinimg"
-              src="https://as2.ftcdn.net/v2/jpg/01/90/52/65/1000_F_190526564_IVy5J7E9JXdyKqeSrZx8hr6YTLhyIYpQ.jpg"
+              src="https://goldenfrysedgley.co.uk/admin2/img/photos/bg1.webp"
             />
           </div>
         </div>

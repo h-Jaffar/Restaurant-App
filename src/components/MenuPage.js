@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import "../Css/MenuPage.css";
+import Navbar from "./Navbar";
 
 function MenuPage() {
   let [num, setNum] = useState(1);
@@ -20,30 +21,30 @@ function MenuPage() {
   function showmodal(item) {
     console.log(item.title);
     <div
-      class="modal fade"
+      className="modal fade"
       id="addtocart"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="exampleModalLabel">
               {item.title}
             </h5>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
+          <div className="modal-body">
             <label for="quantity">Quantity</label>
             <div id="quantity">
               <button
-                class="btn btn-light w-100"
+                className="btn btn-light w-100"
                 type="button"
                 onClick={decNum}
               >
@@ -51,12 +52,12 @@ function MenuPage() {
               </button>
               <input
                 type="text"
-                class="form-control text-center"
+                className="form-control text-center"
                 value={num}
                 onChange={handleChange}
               />
               <button
-                class="btn btn-light w-100"
+                className="btn btn-light w-100"
                 type="button"
                 onClick={incNum}
               >
@@ -64,10 +65,10 @@ function MenuPage() {
               </button>
             </div>
           </div>
-          <div class="modal-footer justify-content-center">
-            {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+          <div className="modal-footer justify-content-center">
+            {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
 
-            <button type="button" class="btn btn-primary w-100">
+            <button type="button" className="btn btn-primary w-100">
               Add to Cart
             </button>
           </div>
@@ -188,12 +189,12 @@ function MenuPage() {
         // data-bs-toggle="modal"
         // data-bs-target="#addtocart"
       >
-        <div className="col-md-7">
+        <div className="col-xl-7">
           <h5 className="boldtext">{item.title}</h5>
           <p>{item.description}</p>
           <h5>${item.price}</h5>
         </div>
-        <div className="col-md-5">
+        <div className="col-xl-5">
           <img className="productimg" src={item.image} />
         </div>
       </div>
@@ -201,30 +202,30 @@ function MenuPage() {
   ));
 
   //   <div
-  //   class="modal fade"
+  //   className="modal fade"
   //   id="addtocart"
   //   tabindex="-1"
   //   aria-labelledby="exampleModalLabel"
   //   aria-hidden="true"
   // >
-  //   <div class="modal-dialog">
-  //     <div class="modal-content">
-  //       <div class="modal-header">
-  //         <h5 class="modal-title" id="exampleModalLabel">
+  //   <div className="modal-dialog">
+  //     <div className="modal-content">
+  //       <div className="modal-header">
+  //         <h5 className="modal-title" id="exampleModalLabel">
   //           {item.title}
   //         </h5>
   //         <button
   //           type="button"
-  //           class="btn-close"
+  //           className="btn-close"
   //           data-bs-dismiss="modal"
   //           aria-label="Close"
   //         ></button>
   //       </div>
-  //       <div class="modal-body">
+  //       <div className="modal-body">
   //         <label for="quantity">Quantity</label>
   //         <div id="quantity">
   //           <button
-  //             class="btn btn-light w-100"
+  //             className="btn btn-light w-100"
   //             type="button"
   //             onClick={decNum}
   //           >
@@ -232,12 +233,12 @@ function MenuPage() {
   //           </button>
   //           <input
   //             type="text"
-  //             class="form-control text-center"
+  //             className="form-control text-center"
   //             value={num}
   //             onChange={handleChange}
   //           />
   //           <button
-  //             class="btn btn-light w-100"
+  //             className="btn btn-light w-100"
   //             type="button"
   //             onClick={incNum}
   //           >
@@ -245,10 +246,10 @@ function MenuPage() {
   //           </button>
   //         </div>
   //       </div>
-  //       <div class="modal-footer justify-content-center">
-  //         {/* <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
+  //       <div className="modal-footer justify-content-center">
+  //         {/* <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button> */}
 
-  //         <button type="button" class="btn btn-primary w-100">
+  //         <button type="button" className="btn btn-primary w-100">
   //           Add to Cart
   //         </button>
   //       </div>
@@ -283,12 +284,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -377,12 +378,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -504,11 +505,11 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -550,11 +551,11 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -925,11 +926,11 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -970,7 +971,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
@@ -999,12 +1000,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -1027,7 +1028,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
       </div>
@@ -1082,12 +1083,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -1131,7 +1132,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}(Kids Meal)</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
@@ -1192,7 +1193,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <h5>${item.price}</h5>
       </div>
@@ -1268,7 +1269,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
@@ -1344,7 +1345,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
@@ -1377,7 +1378,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <h5>${item.price}</h5>
       </div>
@@ -1409,7 +1410,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <h5>${item.price}</h5>
       </div>
@@ -1468,7 +1469,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
@@ -1589,7 +1590,7 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-12">
+      <div className="col-xl-12 responsiveness">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
@@ -1799,12 +1800,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -1847,12 +1848,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -2178,12 +2179,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -2300,12 +2301,12 @@ function MenuPage() {
       // data-bs-toggle="modal"
       // data-bs-target="#addtocart"
     >
-      <div className="col-md-7">
+      <div className="col-xl-7">
         <h5 className="boldtext">{item.title}</h5>
         <p>{item.description}</p>
         <h5>${item.price}</h5>
       </div>
-      <div className="col-md-5">
+      <div className="col-xl-5">
         <img className="productimg" src={item.image} />
       </div>
     </div>
@@ -2313,241 +2314,17 @@ function MenuPage() {
 
   return (
     <>
-      <div className="scrollingoff" id="page-wrap outer-container">
-        <nav className="sticky-top navbar-light bg-light justify-content-center">
-          <div className="row menu">
-            <div className="col-md-4 menuitems text-start">
-              <button
-                class="btn"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample"
-              >
-                <i className="fa-solid fa-cart-shopping btnicon"></i>
-                Cart
-              </button>
-            </div>
-
-            <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id="offcanvasExample"
-              aria-labelledby="offcanvasExampleLabel"
-            >
-              <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="offcanvasExampleLabel">
-                  Shopping Cart
-                </h2>
-                <button
-                  type="button"
-                  class="btn-close text-reset"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">
-                <div className="my-5">
-                  <h6>Your Cart is Empty!</h6>
-                </div>
-                <div class="cart-cont">
-                  <p>
-                    Order Minimum is $5.00. Please add more items in the cart.
-                  </p>
-                </div>
-                <div className="cart-card">
-                    <h4>Item Name</h4>
-                    <h6>Q x $Price</h6>
-                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
-                </div>
-                <div className="cart-card">
-                    <h4>Item Name</h4>
-                    <h6>Q x $Price</h6>
-                    <button className="btn"><i class="fa-solid fa-plus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-minus"></i></button>
-                    <button className="btn"><i class="fa-solid fa-trash"></i></button>
-                </div>
-                <div className="row my-5">
-                  <h6>Sub-total: $100</h6>
-                  <button className="btn btn-primary btn-lg mt-2">CheckOut</button>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-4 menuitems text-center">
-              <a href="/">
-                <img
-                  className="menuimg"
-                  src="https://www.happyspizzaburger.co.uk/uploads/restorants/198031cc-1875-4d54-8945-8135a96f353a_large.jpg"
-                />
-              </a>
-            </div>
-
-            <div className="col-md-4 menuitems text-end">
-              <Link to="/login">
-                <button className="btn btn-light">
-                  <i className="fa-solid fa-user btnicon"></i>Sign in
-                </button>
-              </Link>
-            </div>
-          </div>
-        </nav>
+      <div className="scrollingoff">
+        <Navbar/>
 
         <div className="row justify-content-center">
-          <div className="col-md-12 text-center">
+          <div className="col-xl-12 text-center">
             <img
               className="menutitleimg"
               src="https://www.happyspizzaburger.co.uk/uploads/restorants/751msq61654252482.jpg"
             />
           </div>
         </div>
-
-        {/* <div
-        id="carouselExampleControls"
-        className="carousel  sticky-top slide"
-        data-interval="false"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <ul className="nav nav-pills nav-fill sticky-top flex-column">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#drinks">
-                  Drinks
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#juice">
-                  Juice
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#milkshake">
-                  Milkshake
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#burgermeal">
-                  Burger Meal
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#chickenfillet">
-                  Chicken Fillet Burger Meal
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#pizza">
-                  Pizza
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#mealdeal">
-                  Meal Deals
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#parmesan">
-                  Parmesan
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#platter">
-                  Platter
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#dessert">
-                  Dessert
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="carousel-item">
-            <ul className="nav nav-pills nav-fill sticky-top flex-column">
-              <li className="nav-item">
-                <a className="nav-link" href="#kidsmeal">
-                  Kids Meal
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#dips">
-                  Dips
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#kebab">
-                  Kebabs
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#wrap">
-                  Wraps
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#spicywing">
-                  Spicy Wings
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#icecream">
-                  Ice Cream
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#speciality">
-                  Happy's Specialities
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#sideorder">
-                  Side Orders
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#garlicbread">
-                  Garlic Bread
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#calzone">
-                  Calzone
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#burger">
-                  Burgers
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#chickenfilletburger">
-                  Chicken Fillet Burgers
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControls"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div> */}
 
         <ul className="nav nav-pills nav-fill sticky-top flex-column">
           <li className="nav-item">
@@ -2663,154 +2440,154 @@ function MenuPage() {
         </ul>
 
         <div className="row productrow" id="drinks">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5 nomargin">Drinks</h3>
             <div className="row centeritems">{drinks}</div>
           </div>
         </div>
 
         <div className="row productrow" id="juice">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Juices</h3>
             <div className="row centeritems">{juices}</div>
           </div>
         </div>
 
         <div className="row productrow" id="milkshake">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Milk Shakes</h3>
             <div className="row centeritems">{milkshakes}</div>
           </div>
         </div>
 
         <div className="row productrow" id="burgermeal">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Burger Meal</h3>
             <div className="row centeritems">{burgermeals}</div>
           </div>
         </div>
 
         <div className="row productrow" id="chickenfillet">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger Meal</h3>
             <div className="row centeritems">{chickenfillets}</div>
           </div>
         </div>
 
         <div className="row productrow" id="pizza">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Pizza</h3>
             <div className="row centeritems">{pizzas}</div>
           </div>
         </div>
 
         <div className="row productrow" id="mealdeal">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Meal Deals</h3>
             <div className="row centeritems">{mealdeals}</div>
           </div>
         </div>
 
         <div className="row productrow" id="parmesan">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Parmesan</h3>
             <div className="row centeritems">{parmesans}</div>
           </div>
         </div>
 
         <div className="row productrow" id="platter">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Platter</h3>
             <div className="row centeritems">{platters}</div>
           </div>
         </div>
 
         <div className="row productrow" id="dessert">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Dessert</h3>
             <div className="row centeritems">{desserts}</div>
           </div>
         </div>
 
         <div className="row productrow" id="kidsmeal">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Kids Meal</h3>
             <div className="row centeritems">{kidsmeals}</div>
           </div>
         </div>
 
         <div className="row productrow" id="dips">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Dips</h3>
             <div className="row centeritems">{dips}</div>
           </div>
         </div>
 
         <div className="row productrow" id="kebab">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Kebabs</h3>
             <div className="row centeritems">{kebabs}</div>
           </div>
         </div>
 
         <div className="row productrow" id="wrap">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Wraps</h3>
             <div className="row centeritems">{wraps}</div>
           </div>
         </div>
 
         <div className="row productrow" id="spicywing">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Spicy Wings</h3>
             <div className="row centeritems">{spicywings}</div>
           </div>
         </div>
 
         <div className="row productrow" id="icecream">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Ice Creams</h3>
             <div className="row centeritems">{icecreams}</div>
           </div>
         </div>
 
         <div className="row productrow" id="speciality">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Happy's Specialities</h3>
             <div className="row centeritems">{specialities}</div>
           </div>
         </div>
 
         <div className="row productrow" id="sideorder">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Side Orders</h3>
             <div className="row centeritems">{sideorders}</div>
           </div>
         </div>
 
         <div className="row productrow" id="garlicbread">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Garlic Bread</h3>
             <div className="row centeritems">{garlicbreads}</div>
           </div>
         </div>
 
         <div className="row productrow" id="calzone">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Calzone</h3>
             <div className="row centeritems">{calzones}</div>
           </div>
         </div>
 
         <div className="row productrow" id="burger">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Burger</h3>
             <div className="row centeritems">{burgers}</div>
           </div>
         </div>
 
         <div className="row productrow" id="chickenfilletburger">
-          <div className="col-md-12">
+          <div className="col-xl-12 responsiveness">
             <h3 className="boldtext ms-2 mt-5">Chicken Fillet Burger</h3>
             <div className="row centeritems">{chickenfilletburgers}</div>
           </div>

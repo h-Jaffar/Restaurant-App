@@ -152,7 +152,7 @@ code {
 }
 
 @media
-(max-width: 476px)
+(max-width: 992px)
 {
   .menu{
     display: flex !important;
@@ -183,20 +183,56 @@ code {
   .productrow{
     display: block !important;
     margin-top: 20px;
+    justify-content: center !important;
   }
   .productcard{
     width: 80% !important;
     text-align: center;
   }
   .blockimg{
-    height: 220px;
+    height: 250px;
   }
   .centered{
-    height: 220px;
+    height: 250px;
     padding: 0 10px;
     width: 94%;
   }
+
+  .centered h4{
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0;
+  }
+
+  .centered h1{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0;
+  }
+
+  .whyus{
+    font-size: 12px !important;
+    padding: 0 10px !important;
+
+  }
+  .sidebar{
+    display: none;
+  }
+  body{
+    overflow-x: hidden !important;
+  }
+  .usercartbtn{
+    width: 40% !important;
+  }
+  .responsiveness{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .menutitleimg{
+    height: 180px !important;
+  }
 }
+
 
 .carouselcont {
   position: relative;
@@ -296,6 +332,7 @@ a{
   color: white;
   height: 85px;
   position: sticky !important;
+  z-index: 0 !important;
 }
 
 .nav-pills a{
@@ -307,26 +344,6 @@ a{
   color: white;
 }
 
-
-/* .customSticky{
-  position: sticky;
-} */
-
-/* .carousel-control-prev{
-  background-color: black;
-  color: white;
-  justify-content: left;
-  width: 29px;
-  margin-top: 80px;
-}
-.carousel-control-next{
-  background-color: black;
-  color: white;
-  justify-content: right;
-  width: 29px;
-  margin-top: 80px;
-} */
-
 .nav-item {
   /* cursor: pointer; */
   margin: 15px 10px;
@@ -337,11 +354,6 @@ a{
 .nav-link {
   font-size: 16px;
   text-align: center;
-}
-@media (maz-width: 468px){
-  body{
-    overflow-x: hidden;
-  }
 }
 
 
@@ -367,4 +379,110 @@ a{
 .cart-card button{
   border: 1px solid black;
   margin: 5px;
+}
+
+.whyus{
+  padding: 0 80px;
+}
+
+.mainnavbar{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.dropdown-item{
+    margin: 5px 0 !important;
+    padding: 5px !important;
+}
+
+.dropdown p:hover{
+  background-color: white;
+}
+
+.dropdown{
+  display: inline-flex !important;
+}
+
+.sidebar{
+ background-color: white;
+ color: black;
+ font-weight: bold;
+ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.sidebartag{
+ background-color: white;
+ color: black;
+ display: block !important;
+ padding: 10px !important;
+}
+
+.profileinfo{
+  height: 350px;
+}
+
+.userprofileinfo{
+  display: inline-flex;
+  align-items: center;
+}
+
+.usercartbtn{
+  margin-left: auto;
+  font-weight: 500;
+  font-size: large;
+  width: 25%;
+}
+
+.addressaction{
+  position: inline;
+}
+
+.filterbtn{
+  width: 100% !important;
+}
+
+.filtermenu{
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.br{
+  border-radius: 20px;
+}
+
+.ordertype{
+  display: inline-flex !important;
+  margin: 0 20px 0 0;
+}
+
+.ordertype label{
+  margin: 0 5px;
+}
+
+.timelist{
+  width: 100%;
+}
+
+.time{
+  font-size: small;
+  height: 25px;
+}
+
+.backbutton{
+  margin: 0 auto;
+}
+
+.userdditem{
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 20px !important;
+}
+
+.userddmenu{
+  width: 300px;
+}
+
+.shoppingcart{
+  z-index: 2000;
 }
