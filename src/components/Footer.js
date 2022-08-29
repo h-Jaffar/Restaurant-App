@@ -1,9 +1,9 @@
 import React from "react";
-import "../Css/Footer.css"
+import "../Css/Footer.css";
 function Footer() {
-    return(
-        <>
-                  <div className="row footer justify-content-center">
+  return (
+    <>
+      <div className="row footer justify-content-center responsiveness">
         <div className="col-md-3 text-center">
           <h4 className="boldtext">Information</h4>
           <a href="/">Privacy Policy</a>
@@ -27,8 +27,8 @@ function Footer() {
           <br />
           <br />
           <a href="/">
-            <i className="fa-solid fa-location-pin"></i> 11 Wendover Rd, Messingham,
-            Scunthorpe DN17 3SN
+            <i className="fa-solid fa-location-pin"></i> 11 Wendover Rd,
+            Messingham, Scunthorpe DN17 3SN
           </a>
           <br />
           <br />
@@ -52,9 +52,8 @@ function Footer() {
           />
         </div>
       </div>
-        </>
-
-    );
+    </>
+  );
 }
 
 export default Footer;
